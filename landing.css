@@ -1,0 +1,59 @@
+@import url ("./font/helveticaneue/HelveticaNeue Light.ttf");
+@import url ("./font/helveticaneue/HelveticaNeue Thin.ttf");
+
+body {
+  font-family: HelveticaNeue;
+  margin:0;
+  text-align: center;
+}
+
+.main {
+  display:inline-block;
+  max-width: 800px;
+  width : 100%;
+}
+
+.img_ {
+  width : 100%;
+}
+
+p {
+  text-align: left;
+  font-family : HelveticaNeue;
+}
+
+li {
+  margin : 5px;
+  text-align : left;
+  font-size: 1.2em;
+}
+h1 {
+  padding-top : 20px;
+  border-top : 1px solid black;
+}
+
+h3 {
+  text-align: left;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+#bigger {
+  margin : 5px;
+  text-align: center;
+  font-size : 2.3em;
+}
+
+#smaller {
+  margin: 5px;
+  text-align: center;
+  font-size :
+}
+
+.call {
+  margin : 10%;
+  margin-top: 10px;
+}
