@@ -1,0 +1,92 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
+</head>
+
+
+<style media="screen">
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+  body {
+	font-family: 'Roboto', sans-serif;
+  }
+</style>
+
+<body>
+
+
+<div class="" style="text-align:center; margin-bottom:15px; ">
+  <img class="logo__image" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2149391719/settings_images/aXW3x9UrRCqk4n0Pu3Kl_Logo_with_Cat_1.png" kjb-settings-id="sections_header_blocks_1555988494486_settings_logo" alt="Header Logo" style="width:25%">
+
+</div>
+
+<div class="feature" style="text-align:center;">
+      <img class="feature__image" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2149391719/settings_images/OOGJUbJHSQWnLrYvXWht_Group_Individual_Korean_Product_Pose_2.png" kjb-settings-id="sections_1638869282102_blocks_1638869282102_1_settings_image" alt="" style="width:35%; text-align:center;">
+  <div class="feature__text" kjb-settings-id="sections_1638869282102_blocks_1638869282102_1_settings_text" style="text-align:center;">
+    <h4 class="pricing__name" kjb-settings-id="sections_1633491670319_blocks_1633491670319_1_settings_name">Clases grupales</h4>
+<p><strong>1 o 2 clases a la semana</strong></p>
+<p>Grupos reducidos de entre 4-10 personas.</p>
+  </div>
+
+<style>
+  #block-1638869282102_1 .btn {
+    color: #ffffff;
+    border-color: #f1c40f;
+    border-radius: 4px;
+    background-color: #f1c40f;
+  }
+  #block-1638869282102_1 .btn--outline {
+    background: transparent;
+    color: #f1c40f;
+  }
+</style>
+
+</div>
+
+<div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"Survive with K-pop\nAprende Coreano\n한국어 수업","amount":{"currency_code":"USD","value":62}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+</body>
